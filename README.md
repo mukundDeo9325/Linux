@@ -1,155 +1,148 @@
-## **Introduction to DevOps**
+# Edditors
+```
+Editors are used to create new files, and edit or modify the content inside it. Simply editors
+are used to read and write data in existing or newly created file. Editors can be classified on the basis
+of interfaces that they use, i.e. Graphical Editors and Command Line Editors.
+```
+## Vim Editor
+- vi (virtual interface) and vim (virtual interface modified) are most commonly used
+editors. vi and vim both editors are same where as vim is the advance version of vi editor.
+Thus, it contains some additional features. These editors works in four different modes,
+- Insert mode
+- Ex-mode
+- Command mode
+- Visual mode
 
-* DevOps means **Development + Operations** working together.
-* Goal is to improve **software delivery speed**, **quality**, and **automation**.
-* Removes communication gap between developer and operations teams.
-* Focus Areas:
 
-  * Collaboration
-  * CI/CD (Continuous Integration & Continuous Delivery)
-  * Automation
-  * Monitoring
-  * Continuous Improvement
+Vim is a powerful text editor with three main modes:
 
----
+### 1. Command Mode (Default)
+- Default mode when opening Vim
+- Used for navigation and commands
 
-## **What is an Application?**
+#### Line Operations
+- `dd`: Delete current line
+- `<n>dd`: Delete n lines from current cursor
+  - `2dd`: Delete 2 lines
+  - `10dd`: Delete 10 lines
+- `yy`: Copy (yank) current line
+- `<n>yy`: Copy n lines
+  - `2yy`: Copy 2 lines
+- `p`: Paste copied/deleted lines
+- `<n>p`: Paste n times
+  - `10p`: Paste 10 times
+- `u`: Undo
+- `Ctrl + r`: Redo
 
-* A software created to solve a **specific problem**.
-* Examples:
+#### Word Operations
+- `dw`: Delete current word
+- `<n>dw`: Delete n words
+  - `7dw`: Delete 7 words
 
-  * WhatsApp → Messaging
-  * Swiggy → Food delivery
-* Main Components:
+#### Navigation
+- `gg`: Move to first line
+- `<n>gg`: Move to specific line
+  - `20gg`: Move to line 20
+  - `102gg`: Move to line 102
+- `G`: Move to last line
+- `M`: Move to middle of screen
+- `H`: Move to top of screen
+- `L`: Move to bottom of screen
 
-  * **Frontend**: User interface
-  * **Backend**: Logic and processing
-  * **Database**: Stores data
+#### Search Operations
+- `/<word>`: Search for word
+  - `n`: Find next occurrence
+  - `N`: Find previous occurrence
 
----
+### 2. Insert Mode
+- Used for text input
+- Enter with: `i`, `I`, `a`, `A`, `o`, `O`
+- Exit with: `Esc` or `Esc+Esc`
 
-## **Developers vs Testers vs DevOps**
+#### Insert Mode Commands
+- `i`: Insert at cursor
+- `I`: Insert at beginning of line
+- `a`: Insert after cursor
+- `A`: Insert at end of line
+- `o`: Insert new line below
+- `O`: Insert new line above
+- `r`: Replace single character
+- `R`: Replace multiple characters
 
-| Role            | Responsibility                              |
-| --------------- | ------------------------------------------- |
-| Developer       | Writes code based on requirements           |
-| Tester          | Checks application for issues/bugs          |
-| DevOps Engineer | Deploys, automates, and manages environment |
+### 3. Ex Mode (Command Line Mode)
+- Enter with `:`
+- Used for file operations and advanced commands
 
-**DevOps acts as a bridge between Dev & Ops.**
+#### File Operations
+- `:q`: Quit
+- `:q!`: Force quit
+- `:w`: Save
+- `:w!`: Force save
+- `:wq`: Save and quit
+- `:wq!`: Force save and quit
+- `:x`: Save and quit
+- `:x!`: Force save and quit
 
----
+#### Display Options
+- `:set nu`: Show line numbers
+- `:set nonu`: Hide line numbers
+- `:<n>`: Move to line n
 
-## **Top Features of Linux**
+#### Search and Replace
+- `:%s/<old>/<new>/g`: Replace all occurrences
+  - Example: `:%s/sshd/cbz/g`
 
-* Free and Open Source
-* Highly Secure and Stable
-* Command-line power and flexibility
-* Widely used in servers and cloud systems
-* Strong community support
+#### External Commands
+- `:!<command>`: Execute shell command
+  - Examples:
+    ```vim
+    :!touch file1.txt
+    :!touch file{1..100}.txt
+    :!mkdir dir2
+    :!ls
+    ```
 
----
+### Visual Mode
+- `v`: Select character by character
+- `V`: Select line by line
+- `Ctrl+v`: Select block
+- Can use `yy`, `cc`, `dd` in visual mode
 
-## **Linux Everywhere**
+## Best Practices
+1. Always save work before quitting
+2. Use undo/redo for safety
+3. Use visual mode for block operations
+4. Use search for navigation
+5. Use line numbers for reference
+6. Use external commands when needed
+7. Regular saving during editing
 
-* Most **cloud servers** run on Linux
-* Used in:
+## Quick Reference Table
 
-  * Data centers
-  * Web servers
-  * Networking devices
-  * Firewalls
-  * Supercomputers
-* Industry standard for backend infrastructure
+| Category | Command | Description |
+|----------|---------|-------------|
+| **File Operations** | `:w` | Save file |
+| | `:q` | Quit |
+| | `:wq` | Save and quit |
+| | `:q!` | Force quit |
+| **Line Operations** | `dd` | Delete current line |
+| | `yy` | Copy current line |
+| | `p` | Paste |
+| | `u` | Undo |
+| | `Ctrl + r` | Redo |
+| **Navigation** | `gg` | Move to first line |
+| | `G` | Move to last line |
+| | `:set nu` | Show line numbers |
+| | `/<word>` | Search for word |
+| **Insert Mode** | `i` | Insert at cursor |
+| | `I` | Insert at line start |
+| | `a` | Insert after cursor |
+| | `A` | Insert at line end |
+| | `o` | Insert new line below |
+| | `O` | Insert new line above |
+| **Visual Mode** | `v` | Select character |
+| | `V` | Select line |
+| | `Ctrl+v` | Select block |
+| **Search/Replace** | `:%s/old/new/g` | Replace all occurrences |
+| **External** | `:!command` | Execute shell command | 
 
----
-
-## **Operating Systems Basics**
-
-* OS is a software that controls **hardware & applications**.
-* Examples:
-
-  * Windows
-  * Linux (Unix family)
-  * macOS
-  * Android
-  * iOS
-
----
-
-## **Windows vs Linux**
-
-| Feature       | Windows               | Linux                            |
-| ------------- | --------------------- | -------------------------------- |
-| Cost          | Paid                  | Free & Open Source               |
-| Performance   | Good for Personal Use | Best for Servers and Development |
-| Security      | Moderate              | Very Secure                      |
-| Interface     | GUI Focused           | CLI + GUI                        |
-| Customization | Limited               | Highly Customizable              |
-
----
-
-## **What is a Server?**
-
-* A computer system that **provides service to multiple users**.
-* Always running, powerful hardware.
-* Mostly uses **Linux** due to reliability.
-
----
-
-## **Basic Linux Commands**
-
-| Action                  | Command            |
-| ----------------------- | ------------------ |
-| Check Current Directory | `pwd`              |
-| List Files/Folders      | `ls`               |
-| Change Directory        | `cd foldername/`   |
-| Create File             | `touch filename`   |
-| View File Content       | `cat filename`     |
-| Make Directory          | `mkdir foldername` |
-
----
-
-## **Linux File System Structure**
-
-Everything starts from **root (/)**.
-
-| Directory | Purpose                        |
-| --------- | ------------------------------ |
-| `/home`   | User home directories          |
-| `/etc`    | System configuration files     |
-| `/var`    | Logs and variable data         |
-| `/bin`    | Essential system commands      |
-| `/usr`    | Installed software & libraries |
-| `/tmp`    | Temporary files                |
-
----
-
-## **Vim Editor Basics**
-
-* Vim works in different modes:
-
-  * **Command Mode**: Navigation and shortcuts
-  * **Insert Mode**: Typing text (`i` to enter)
-  * **Visual Mode**: Selecting text (`v` to enter)
-  * **Execute Mode**: Running commands (`:`)
-
-**Useful Keys:**
-
-* Enter Insert Mode → `i`
-* Save File → `:w`
-* Quit → `:q`
-* Save & Quit → `:wq`
-* Undo → `u`
-
----
-
-### **Closing Line to say in class**
-
-"To become strong in DevOps, focus on **Linux fundamentals**, **Git**, and learning tools with hands-on practice. Consistency is the key to mastering this field."
-
----
-
-If you'd like, I can now **convert these notes into a downloadable PPT** for classroom presentation.
-
-Just reply: **"Yes, make PPT"** 🎤📊
