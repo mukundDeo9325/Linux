@@ -143,13 +143,3 @@ Everything starts from **root (/)**.
 * Undo → `u`
 
 ---
-
-### **Closing Line to say in class**
-
-"To become strong in DevOps, focus on **Linux fundamentals**, **Git**, and learning tools with hands-on practice. Consistency is the key to mastering this field."
-
----
-
-If you'd like, I can now **convert these notes into a downloadable PPT** for classroom presentation.
-
-Just reply: **"Yes, make PPT"** 🎤📊
